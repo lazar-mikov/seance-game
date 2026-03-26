@@ -119,7 +119,7 @@ io.on('connection', (socket) => {
     broadcastState();
   });
 
-  socket.on('hold', () => {
+  socket.on('hold',  () => {
     if (!session.participants[socket.id]) return;
     session.participants[socket.id].holding = true;
     if (session.phase === 'waiting' || session.phase === 'flatlined') {
